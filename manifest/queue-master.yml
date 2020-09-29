@@ -4,12 +4,11 @@ kind: Deployment
 metadata:
   name: queue-master
   namespace: dev
-  labels:
-    name: queue-master
 spec:
   replicas: 1
-  matchLabels:
-    name: queue-master
+  selector:
+    matchLabels:
+      app: queue-master
   template:
     metadata:
       labels:
